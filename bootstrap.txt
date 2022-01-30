@@ -1,0 +1,35 @@
+bootstrap이란?
+세계에서 가장 유명한 CSS 프레임워크이다. (프레임워크란 현실에서 뭔가를 만들기 전에 세우는 틀 정도로 생각하면 됨)
+우리 코드에 활용할 수 있도록 여러 사람들이 작성한 CSS이다.
+반응형 웹사이트를 빠르게 만들 수 있도록 도와줌 -> CSS를 덜 작성해도 됨
+
+< container >
+class="container" => 가운데 정렬 보통 많이 쓰임
+class="container-fluid" => 화면 전체 가로 길이로 꽉차게 정렬
+container-sm/md/lg/xl => 반응형 작게 줄였을 때는 화면 꽉차게 어느 일정 넓이에 도달하면 가운데 정렬
+
+< button >
+다양한 시맨틱 색상이 있음
+스펠링이 틀려도 오류가 뜨지 않기 때문에 잘 살펴봐야 함..
+
+<button type="button" class="btn btn-primary">Primary</button>
+<button type="button" class="btn btn-secondary">Secondary</button>
+<button type="button" class="btn btn-success">Success</button>
+<button type="button" class="btn btn-danger">Danger</button>
+<button type="button" class="btn btn-warning">Warning</button>
+<button type="button" class="btn btn-info">Info</button>
+<button type="button" class="btn btn-light">Light</button>
+<button type="button" class="btn btn-dark">Dark</button>
+
+<button type="button" class="btn btn-link">Link</button>
+
+
+< display-# >
+글꼴크기
+
+< lead >
+글꼴크기와 글꼴굵기가 변경 됨?
+
+< blockquote >
+블럭형태의 인용문을 만듦
+class="blockquote-footer 추가시 -(하이픈)과 함께 회색으로 변경됨
