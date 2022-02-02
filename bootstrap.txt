@@ -12,6 +12,7 @@ container-sm/md/lg/xl => 반응형 작게 줄였을 때는 화면 꽉차게 어�
 다양한 시맨틱 색상이 있음
 스펠링이 틀려도 오류가 뜨지 않기 때문에 잘 살펴봐야 함..
 
+ex)
 <button type="button" class="btn btn-primary">Primary</button>
 <button type="button" class="btn btn-secondary">Secondary</button>
 <button type="button" class="btn btn-success">Success</button>
@@ -33,3 +34,102 @@ container-sm/md/lg/xl => 반응형 작게 줄였을 때는 화면 꽉차게 어�
 < blockquote >
 블럭형태의 인용문을 만듦
 class="blockquote-footer 추가시 -(하이픈)과 함께 회색으로 변경됨
+
+< color >
+ex)
+.text-primary
+.text-secondary
+.text-success
+.text-danger
+.text-warning
+.text-info
+.text-light
+.text-dark
+.text-body
+.text-muted
+.text-white
+.text-black-50
+.text-white-50
+
+.bg-primary
+.bg-secondary
+.bg-success
+.bg-danger
+.bg-warning
+.bg-info
+.bg-light
+.bg-dark
+.bg-white
+.bg-transparent
+
+< alert >
+경고창 
+
+ex)
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+< grid >
+grid를 사용하기 위해서는 container 클래스가 있어야 한다.
+행(row) 클래스를 사용해서 행을 만들어야 한다.
+12units 을 column으로 나눠 쓴다.
+ex)
+<div class="row">
+    <div class="col-6 bg-success">I AM 6 UNITS</div>
+    <div class="col-6 bg-info">I AM 6 UNITS</div>
+</div>
+
+* 반응형을 만들고 싶을 때?
+ex)
+col-sm-2
+col-md-6
+col-xl-3
+
+* Responsive images도 가능
+<img src="..." class="img-fluid" alt="Responsive image">
+
+* 여백을 없애주고 싶을 때 class에 no-gutters 추가
+
+* flexbox도 가능
+class="row" 설정 시 자동으로 display:flex 됨
+ex)
+class="align-items-center"
+class="justify-content-center"
+
+< Bootstrap Form >
+input 태그 안에 class="form-control" 작성 시 어떤 요소이든 간에 화면의 너비를 차지함.
+
+checkbox도 다양하게 커스텀 가능함.
+<div class="custom-control custom-checkbox">
+    <input type="checkbox" class="custom-control-input" id="customCheck1">
+    <label class="custom-control-label" for="customCheck1">Check this custom checkbox</label>
+</div>
+
+< Navigation Bar >
+collapse - 메뉴를 겹치거나 드러내거나 숨길 수 있음
+navbar-expand-lg - 이렇게 썼을 경우 sm, md 일 때 메뉴가 사라짐 
+fixed-top - 위에 고정
+
+ex)
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <a class="navbar-brand" href="#">Navbar</a>
+    <button class="navbar-toggler" data-toggle="collapse" data-target="#expandMe">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="expandMe">
+    <div class="navbar-nav">
+        <a href="Home" class="nav-item nav-link">Home</a>
+        <a href="About" class="nav-item nav-link">About</a>
+        <a href="Contact " class="nav-item nav-link">Contact</a>
+    </div>
+    </div>
+</nav>
+
+메뉴바 만드는 것을 외울 수 없음. 사이트 참조해서 만들기.
+
+< Icons >
+svg 코드 복사해서 씀
