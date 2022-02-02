@@ -133,3 +133,55 @@ ex)
 
 < Icons >
 svg 코드 복사해서 씀
+font-awesome 에도 무료 아이콘 많음
+
+< 기타 부트스트랩 유틸리티 >
+1. border 
+ex)
+<span class="border"></span>
+<span class="border-top"></span>
+<span class="border-right"></span>
+<span class="border-bottom"></span>
+<span class="border-left"></span>
+
+부트스트랩에서 테두리 굵기 조정은 안됨
+
+* radius
+<img src="..." alt="..." class="rounded">
+<img src="..." alt="..." class="rounded-top">
+<img src="..." alt="..." class="rounded-right">
+<img src="..." alt="..." class="rounded-bottom">
+<img src="..." alt="..." class="rounded-left">
+<img src="..." alt="..." class="rounded-circle">
+<img src="..." alt="..." class="rounded-pill">
+<img src="..." alt="..." class="rounded-0">
+
+2. padding 
+padding 위,아래,좌,우 모두 적용
+p-0
+p-1
+p-2
+
+padding 부분적으로
+pt-5
+pb-3
+px-6 => 좌우
+py-6 => 위아래
+
+* margin 도 이와 동일
+
+3. Cards
+자주 쓰이는 유틸리티로 일반적인 컨텐츠 홀더이자 컨텐츠 컨테이너로 조합해서 사용할 수 있다.
+그리드 시스템과 카드 그리드를 만드는데 쓰인다.
+
+4. Carousel
+사진 갤러리나 이미지 탐색기의 슬라이더를 만드는 데 쓰임
+
+5. Dropdowns 
+
+6. Spinners
+
+7. Progress
+
+8. Modal
+대화창 띄우는 도구
