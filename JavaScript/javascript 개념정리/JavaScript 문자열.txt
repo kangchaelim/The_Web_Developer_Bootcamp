@@ -1,0 +1,79 @@
+1. 문자열 규칙
+toUpperCase() - 대문자로 바꿔 줌
+toLowerCase() - 소문자로 바꿔 줌
+trim() - 공백없애줌
+
+메서드를 연달아 쓸 수 있다.
+ex) 
+let greeting = "    hello again! ";
+greeting.trim().toUpperCase();
+"HELLO AGAIN!"
+
+indexof() - 지정된 값이 처음 나타나는 지점을 반환한다.
+ex) let animals = "catdog";
+animals.indexof("cat");
+0
+animals.indexof("dog");
+3
+animals.indexof("z");
+-1 (not found)
+
+slice() - 문자열의 일부를 추출하거나 잘라내 그 부분을 새로운 문자열로 반환해준다.
+str.slice(beginIndex, [endIndex]) * endIndex는 선택사항
+ex) 
+"haha that is so funny!".slice(5);
+"that is so funny!"
+
+"haha that is so funny!".slice(5, 9);
+"that"
+
+"haha that is so funny!".slice(5, 9);
+"that "
+
+음수도 가능
+"haha that is so funny!".slice(-6);
+"funny!"
+
+replace() - 값을 교체해 줌
+(replace()말고 정규표현식이라는 걸 이용해서 패턴에 매칭시키면 특정한 문자열 대신에 패턴 교체할 수 있는 강력한게 따로 있대..)
+
+첫 번째 인수는 교체할 값, 두번 째 인수는 그 자리를 대신해 들어갈 값
+
+repeat() - 괄호 안에 반복할 횟수 입력
+
+
+2. 유용한 문자열 템플릿
+문자열 안에 표현식을 내장할 수 있는 문자열을 만들고 해당 표현식은 평가된 후 문자열로 바뀐다.
+ex)
+`I counted ${3+4} sheep.`
+// I counted 7 sheep.
+
+
+3. Null Undefined
+null - 일부러 값을 지정하지 않는 걸로 설정하는 거임 정말 아무 것도 없다 자주 볼 일은 x 
+undefined - I don't know 원하는 값을 모르겠다 정의되지 않은 거임 얘가 더 자주 보임
+
+4. 난수와 Math 개체
+< Math Object >
+Math.PI - 파이 // 3.141592653589793
+Math.round() - 반올림
+Math.abs() - 절대값
+Math.pow() - 제곱 ex) Math.pow(2,5) // 32
+Math.floor() - 내림 소수점 버림
+
+임의의 수 만들기
+< Random Numbers >
+Math.random();
+
+ex)
+const step1 = Math.random();
+// 0.5961104892810127
+const step2 = step1 * 10;
+// 5.961104892810127
+const step3 = Math.floor(step2);
+// 5
+const step4 = step3 + 1;
+// 6 
+
+=> Math.floor(Math.random() * 10) + 1;
+

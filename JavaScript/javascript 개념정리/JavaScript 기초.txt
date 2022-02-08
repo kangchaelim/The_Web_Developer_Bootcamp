@@ -1,0 +1,66 @@
+1. javascript 의 Primitive Types(원시타입)
+
+< 자바스크립트의 기본 원시 타입 5가지 >
+Number
+String
+Boolean
+Null
+Undefined
+
+원시타입은 프로그래밍 언어의 일반적인 개념이다. (타입이란? 보관하고 다룰 수 있는 다양한 정보의 타입)
+
+Number Math Operations
++ (더하기)
+- (빼기)
+* (곱하기)
+**(지수연산자)
+%(나머지)
+
+2. NaN
+Nat a Number 숫자가 아니다
+
+숫자가 아닌 값을 나타내지만 자바스크립트에서는 숫자 타입 또는 숫자 패밀리 중 하나로 간주 됨
+ex) 
+0/0
+NaN
+
+typeof NaN
+"number"
+
+3. let const var
+let - 재할당이 가능한 변수를 만들 수 있음
+const - constant 상수를 의미(일정한 값, 변하지 않는 수) => 업데이트 할 수 없음
+var - 옛날 방식
+
+< Quiz >
+1.
+let score = 5;
+score + 4;
+
+score의 값은?
+정답 : 5
+
+2.
+let bankBalance = 100;
+bankBalance /= 2;
+bankBalance += 10;
+
+bankBalance의 값은?
+정답 : 60
+
+3. 
+const age = 64;
+age++;
+
+age의 값은? 
+정답 : 64
+
+4. 불리언(Booleans)
+불리언은 두 가지 값이 있다 => true or false
+예/아니오 참/거짓 값에 사용된다.
+
+5. 변수 명명과 규칙
+변수 지정 시 공백X, 숫자가 맨 앞X
+주로 카멜케이스로 작성(각 단어의 첫 문자를 대문자로 쓰는 것 ex) let currentYear = 2022;)
+불리언타입 변수 설정 시 is를 붙이는게 좋다 ex) let isGameOver = true;
+변수를 한 글자로 작성하지 말기 ex) let n = 9; X

@@ -1,0 +1,37 @@
+1. 배열 임의 접근
+const days = ["MONDAY", "TUSEDAY", "WEDNESDAY", "THURSDAY", "FRIDAY"];
+days[1]; // TUSEDAY
+days[0][0]; // M
+
+
+let firstName = "colt";
+firstName[0] = "C";
+firstName
+// colt
+
+let colors = ["rad", "orange", "yellow"];
+colors[0] = "red"
+colors
+// (3) "red", "orange", "yellow" 
+
+특정 문자를 바꿀 수 없었던 문자열과는 달리 배열에서는 요소를 바꿀 수 있다.
+
+let array = ["red", 70, "yellow"];
+array[10] = "indigo";
+array
+// (11) ["red", 70, "yellow", empty x 7 , "indigo"]
+array[5];
+// undefined
+
+
+2. Push / Pop / Shift / Unshift 메서드
+Push() - 배열 맨 끝에 요소 추가
+Pop() - 배열 맨 끝의 요소 삭제
+Shift() - 배열 맨 앞의 요소 제거
+Unshift() - 배열 맨 앞에 요소 추가
+
+3. Concat / indexOf / includes / reverse 메서드
+
+
+
+
