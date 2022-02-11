@@ -1,0 +1,72 @@
+1. 함수 개요
+함수란?
+코드의 재사용 가능한 일부로서 언제든 사용할 수 있도록 이름을 붙여놓은 것
+코드이 중복을 줄이는 데 무척 유용하고 코드를 더 읽기 쉽고 이해하기 쉽게 만든다.
+
+function funcName(){
+    // do something
+}
+funcName()
+
+
+2. 인수 개요
+No inputs!
+// No input
+"hello".toUpperCase();
+
+Arguments!
+// Different inputs...
+"hello".indexOf('h'); // 0
+"hello".indexOf('o'); // 4
+
+모든 메서드는 곧 함수
+function funcName(나는야 매개변수){
+    // do something
+}
+funcName(나는야 인수)
+인수는 함수를 실행할 때 괄호 안에 전달하는 것이고 매개변수는 일종의 플레이스홀더로서 함수 정의할 때 용도에 따라 정해줄 수 있습니다.
+
+
+3. 인수가 여러 개인 함수
+function greet(firstName, lastName){
+    console.log(`Hey there, ${firstName} ${lastName[0]}.`)
+}
+greet('Chaelim', 'Kang')
+// Hey therem Chaelim K.  
+ 
+
+
+숫자나 문자열 같은 다른 타입도 인수가 되도록 함수를 정의할 수 있다.
+
+function repeat(str, numTimes){
+    let result = '';
+    for(let i = 0; i < numTimes; i++){
+        result += str;
+    }
+    console.log(result);
+}
+
+repeat('Hi', 5)
+// Hi Hi Hi Hi Hi
+
+
+3. 반환 키워드
+구체적인 출력 값을 가진 함수를 써서 출력 값을 출력하는 데 그치지 않고 저장하고 보관하기 위해서는 반환 키워드가 필요하다.
+
+< 반환키워드의 역할 >
+- 함수 밖으로 값을 내보낼 수 있다.
+
+function add(x, y){
+    let sum = x + y;
+    return sum
+}
+
+- 함수 실행을 중단시킬 수 있다.
+
+function add(x, y){
+    if (typeof x !== 'number' || typeof y !== 'number'){
+        return false;
+    }
+    return x + y;
+    // 여기에 console.log()를 써도 실행되지 않음
+}

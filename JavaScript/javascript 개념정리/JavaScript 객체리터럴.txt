@@ -1,0 +1,27 @@
+1. 객체 외부 데이터에 엑세스하기
+
+const person {
+    firstName : "Mick",
+    lastName : "Jagger",
+}
+
+person.firstName
+// Mick
+person["firstName"]
+// Mick
+
+점 구문이 간단하고 좋긴 하지만 변수같은 유동적인 것에는 점 표기법을 사용하면 실행이 안된다.
+대괄호를 써야 코드가 실행 됨
+ex)
+const years = {
+    1999 : "GOOD",
+    2020 : "BAD",
+}
+
+let birthYear = 2020;
+
+years.birthYear
+// undefined
+years[birthYear]
+// "BAD"
+

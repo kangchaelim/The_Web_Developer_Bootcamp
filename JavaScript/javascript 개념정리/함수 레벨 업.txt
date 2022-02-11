@@ -1,0 +1,211 @@
+1. 함수 범위
+ex)
+function collectEggs(){
+    let totalEggs = 6;
+    console.log(totalEggs);
+}
+// 6
+
+function collectEggs(){
+    let totalEggs = 6;
+}
+console.log(totalEggs);
+// error 
+
+let 키워드를 사용해서 그 값을 정의한 함수 안에서 정의한 변수들은 그 함수로 범위가 한정되어 있으므로 이후에 totalEggs에 접근할 수 없다.
+
+
+let totalEggs = 0; // 전역변수 보통은 내부변수를 씀
+function collectEggs(){
+    totalEggs = 6;
+}
+console.log(totalEggs);
+collectEggs()
+console.log(totalEggs);
+
+// 0
+// 6
+
+
+let bird = 'Scarlet Macaw';
+function birdWatch(){
+    // let bird = 'Great Blue Heron';
+    console.log(bird);
+}
+birdWatch()
+
+// Scarlet Macaw
+유리구슬 속에 한정된 함수 안에 같은 이름으로 정의된 변수가 있을 경우 그 변수를 먼저 참조한다.
+가까운 변수가 이기는 것
+그러나 정의된 변수가 없으면 다른곳에서 변수를 찾는다.
+
+
+2. 블록 범위
+블록 범위란? 함수 자리에 함수 대신 블록이 들어가는 것. 변수가 블록의 안에서 선언되면 해당 변수들은 그 블록의 중괄호 또는 중괄호 두 개 사이의 범위에서만 존재한다. 블록범위도 함수범위랑 같은 개념인데 함수가 아니라 조건문과 루프 같은게 나오는 것이다.
+
+ex)
+for (let i = 0; i < 5; i++){
+    var msg = 'abcdefg'
+    console.log(msg)
+}
+console.log(msg)
+// 5 abcdefg
+// abcdefg
+
+for (let i = 0; i < 5; i++){
+    let msg = 'abcdefg'
+    console.log(msg)
+}
+console.log(msg)
+// 5 abcdefg
+// error
+
+let, const 는 블록범위
+유효 범위 규칙을 따르는 변수들을 추가하기 위해서다.
+
+3. 렉시컬 범위
+부모 함수의 안에 중첩된 내부 함수는 해당 외부 함수의 범위에나 또는 범위 내에서 정의된 변수에 엑세스할 수 있다.
+
+ex)
+function outer(){
+    let hero = "Black Panther";
+
+    function inner(){
+        let cryForHelp = `${hero}, please save me!`
+        console.log(cryForHelp);
+    }
+    inner();
+}
+
+
+4. 함수 표현식
+ex)
+const add = function(x,y){
+    return x + y; 
+}
+
+5. 고차함수
+다른 함수와 함께 작동하거나 다른 함수에서 작동하는 함수를 나타낸다.
+
+다른 함수를 인수로 받아서 보통은 그 인수로 어떤 작업을 하는 함수이자 또 함수를 반환할 수 있는 함수
+
+ex)
+function callTwice(func){
+    func();
+    func();
+}
+function laugh(){
+    console.log("HAHAHAHAHAHAHAHAHA");
+}
+callTwice(laugh)
+// HAHAHAHAHAHAHAHAHA
+// HAHAHAHAHAHAHAHAHA
+
+
+6. 반환함수
+함수는 그냥 일반적인 값으로 취급돼서 함수가 반환되든 또는 인수로 전달되든 그 함수를 전달할 수 있다는 점이다.
+ex)
+function makeBetweenFunc(min, max){
+    return function (num){
+        return num >= min && num <= max;
+    }
+}
+
+const isChild = makeBetweenFunc(0, 18)
+isChild(40)
+// false
+isChild(5)
+// true
+
+7. 메서드 정의하기 
+ex)
+const math = {
+    multiply : function(x, y){
+        return x * y;
+    },
+    divide : function(x, y){
+        return x / y;
+    },
+    square : function(x){
+        return x * x;
+    }
+}
+
+We can add functions as properties on object.
+We can call them methods!
+메서드는 객체에 속성으로 추가된 함수
+
+const math = {
+    multiply(x, y){
+        return x * y;
+    },
+    divide(x, y){
+        return x / y;
+    },
+    square(x){
+        return x * x;
+    }
+}
+최근 간단하게 바뀌었음
+
+
+8. 'this'라는 불가사의한 키워드
+ex)
+const cat = {
+    name : 'Blue Steele',
+    color : 'grey',
+    breed : 'scottish fold',
+    meow(){
+        console.log(`${this.name} says MEOWWWW`);
+    }
+}
+
+cat.meow()
+// Blue Steele says MEOWWWW
+
+const meow2 = cat.meow
+meow2()
+// says MEOWWWW
+
+
+
+const cat = {
+    name : 'Blue Steele',
+    color : 'grey',
+    breed : 'scottish fold',
+    meow(){
+        console.log("THIS IS: ", this)
+        console.log(`${this.name} says MEOWWWW`);
+    }
+}
+
+cat.meow()
+// THIS IS : {name : "Blue Steele", color : "grey", breed : "scottish fold", meow : f}
+meow2()
+// THIS IS : Window { ~~ } 윈도우 객체 나옴
+
+
+9. Try /  Catch
+try 와 catch 는 항상 함께 일하며 자바스크립트의 오류 및 예외를 처리합니다.
+보통 한 곳에 오류가 나면 오류 표시가 뜨며 코드 전체가 중단된다.
+그러나 try와 catch를 이용하면 코드를 문제없이 실행시키고 오류를 처리할 수 있게 된다.
+
+ex)
+try {
+    hello.toUpperCase();
+} catch {
+    console.log("ERROR!!!")
+}
+
+console.log("AFTER") // 오류뜨지 않고 콘솔창에 AFTER 라고 입력됨
+
+function yell(msg){
+    try{
+        console.log(msg.toUpperCase().repeat(3));
+    }catch (e) {
+        console.log(e);
+    }
+}
+오류로 전체를 중단시키지 않고 다른 실행에 문제 없게 오류가 무엇인지 알려줌
+
+

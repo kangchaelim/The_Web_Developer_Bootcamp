@@ -1,0 +1,122 @@
+1. For 루프
+console.log(1)
+console.log(2)
+console.log(3)
+console.log(4)
+console.log(5)
+console.log(6)
+console.log(7)
+console.log(8)
+console.log(9)
+console.log(10)
+
+for( let i = 1; i <= 10; i++){
+    console.log(i);
+}
+
++ / - / * 다양하게 활용가능
+
+2. 네스트 구성 루프
+ex)
+let str = 'LOL'
+for (ler i = 0; i <= 4; i++){
+    console.log("Outer:", i);
+    for (let j = 0; j < str.length; j++){
+        console.log('   Inner:', str[j]);
+    }
+}
+
+3. 또 다른 루프 :While 루프
+어떤 조건문이 오더라도 참이라고 판별되면 계속해서 반복한다.
+반대로 거짓이라고 판별되면 반복하지 않는다.
+
+let count = 0;
+while (count < 10){
+    count++;
+    console.log(count)
+}
+
+4. 정지 / break 키워드
+let input = prompt("Hey, say something!")
+while(true){
+    input = prompt(input);
+    if(input.toLowerCase() === "stop sopting me") break;
+}
+console.log("OK YOU WIN!")
+
+
+5. for..of(새로운 개념이라 Internet Explorer 지원 안됨)
+const subreddits = ['change', 'books', 'chickens', 'funny', 'pics', 'soccer']
+
+for (let i = 0; i < subreddits.length; i++){
+    console.log(`Visit reddit.com/r/${subreddits[i]}`)
+}
+
+for of 로 간단하게 바꿀 수 있음
+
+for (let sub of subreddits){
+    console.log(`Visit reddit.com/r/${sub}`)
+}
+
+각각의 요소에 엑세스하기 위한 목적으로만 만든 거임
+
+for (let char of "hello world"){
+    console.log(char)
+}
+// h
+// e
+// l
+// l
+// o
+// w
+// o
+// r
+// l
+// d
+
+6. 객체 루프 for...in
+const testScores = {
+    A : 70,
+    B : 80,
+    C : 60,
+    D : 90,
+    E : 100,
+}
+
+// for...of 시 오류 남
+for (let person in testScores) {
+    console.log(`${person} scored ${testScores[person]});
+}
+// A scored 70
+// B scored 80
+// C scored 60
+// D scored 90
+// E scored 100
+
+Object.keys
+Object.values
+Object.entries
+이용해서 키와 값을 알 수 있음
+
+for (let score of Object.values(testScores)){
+    console.log(score);
+}
+// 70
+// 80
+// 60
+// 90
+// 100
+
+// 합계 구하기
+let total = 0;
+for (let score of Object.values(testScores)){
+    total += score;
+}
+
+// 평균 구하기
+let total = 0;
+let scores = Object.values(testScores);
+for (let score of scores){
+    total += score;
+}
+console.log(total / scores.length)
